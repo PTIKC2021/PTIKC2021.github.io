@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PTIK C 2021 Official</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="img/png" href="image/icon.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://kit.fontawesome.com/3a4ac34987.js"></script>
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {width: 120px;background: #222;}
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {margin-left: 120px}
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 2px black; 
+      border-radius: 10px;
+    }
+ 
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(180deg, red, yellow);
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background-image: linear-gradient(180deg, red, yellow);
+    }
+
+    </style>
+    <script>
+      document.onkeydown = function (e) { 
+        if (event.keyCode == 123) { 
+            return false; 
+        } 
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { 
+            return false; 
+        } 
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { 
+            return false; 
+        } 
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { 
+            return false; 
+        } 
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { 
+            return false; 
+        } 
+    } 
+    $(document).bind("contextmenu",function(e) { 
+        e.preventDefault(); 
+    }); 
+    // Toggle between hiding and showing blog replies/comments
+    document.getElementById("myBtn").click();
+    function myFunction(id) {
+      var x = document.getElementById(id);
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+
+    function likeFunction(x) {
+      x.style.fontWeight = "bold";
+      x.innerHTML = "✓ Liked";
+    }
+    </script>
+  </head>
+
+<body oncontextmenu="return false;" class="w3-black">
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img class="w3-padding-24" src="image/Logo.png" style="width:90%">
+  <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fab fa-flipboard w3-xlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="far fa-address-card w3-xlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#gallery" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fas fa-th-large w3-xlarge"></i>
+    <p>GALLERY</p>
+  </a>
+  <a href="#blog" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fas fa-blog w3-xlarge"></i>
+    <p>BLOG</p>
+  </a>
+  <a href="#event" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="far fa-calendar-alt w3-xlarge"></i>
+    <p>EVENT</p>
+  </a>
+  <a href="#member" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xlarge"></i>
+    <p>MEMBER</p>
+  </a>
+  <a href="#dev" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xlarge"></i>
+    <p>DEV</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fas fa-headset w3-xlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-bottom w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#gallery" class="w3-bar-item w3-button" style="width:25% !important">GALLERY</a>
+    <a href="#blog" class="w3-bar-item w3-button" style="width:25% !important">BLOG</a>
+    <a href="#event" class="w3-bar-item w3-button" style="width:25% !important">EVENT</a>
+    <a href="#member" class="w3-bar-item w3-button" style="width:25% !important">MEMBER</a>
+    <a href="#dev" class="w3-bar-item w3-button" style="width:25% !important">DEV</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">We Are</span></br>PTIK C 2021 Official</h1>
+    <p>This is our community.</p>
+    <img src="image/Logo.png" alt="PTIK C 2021 Logo" class="w3-image" width="92" height="208">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64">
+    <h2 class="w3-text-light-grey">BACKGROUND</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>PTIK C 2021 is one of the classes in the informatics and computer engineering department of the informatics and computer engineering education study program.
+    </p>
+    <p>The association of students who are members of the PTIK C class in the class of 2021. The class which was formed on August 15, 2021 totals 42 students and comes from various regions living in Indonesia.
+    </p>
+    <p>Like classes in general, of course, the first glance of each other still maintains an attitude. Over time, we bonded and created a cohesive classroom atmosphere. 
+    </p>
+  </div>
+  <div class="w3-padding-16 w3-content" id="about">
+    <h2 class="w3-text-light-grey">ABOUT US</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <h3 class="w3-padding-24 w3-text-light-grey">Course</h3>
+    <p class="w3-wide">Islamic Education</p>
+    <div class="w3-dark-grey" style="height:4px;width:100%"></div>
+    <br>
+    <p class="w3-wide">Civic Education</p>
+    <div class="w3-dark-grey" style="height:4px;width:100%"></div>
+    <br>
+    <p class="w3-wide">Basic Mathematic</p>
+    <div class="w3-dark-grey" style="height:4px;width:100%"></div>
+    <br>
+    <p class="w3-wide">Introduction To Education</p>
+    <div class="w3-dark-grey" style="height:4px;width:100%"></div>
+    <br>
+    <p class="w3-wide">Introduction To Computer Science</p>
+    <div class="w3-dark-grey" style="height:4px;width:100%"></div>
+    <br>
+    <p class="w3-wide">Computer Organization And Architecture</p>
+    <div class="w3-dark-grey" style="height:4px;width:100%"></div>
+    <br>
+    <p class="w3-wide">English</p>
+    <div class="w3-dark-grey" style="height:4px;width:100%"></div>
+    <br>
+    <p class="w3-wide">Basic Algorithm And Programming</p>
+    <div class="w3-dark-grey" style="height:4px;width:100%"></div>
+    <br>
+    <p class="w3-wide">Indonesian</p>
+    <div class="w3-dark-grey" style="height:4px;width:100%"></div>
+    <br>
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">11+</span><br>
+        Partners Class
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">55+</span><br>
+        Projects Done
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">89+</span><br>
+        Task Done
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">150+</span><br>
+        Meet Up
+      </div>
+    </div>
+
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Our Informations
+    </button>
+
+    <!-- Administrator -->
+    <h3 class="w3-padding-24 w3-text-light-grey">Class Administrator</h3>  
+    
+    <img src="image/1.jpg" alt="Andi Devina Yaritsa Darius" class="w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Andi Devina Yaritsa Darius.</span> Leader.</p>
+    
+    <img src="image/2.jpg" alt="Muhammad Fardan" class="w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Muhammad Fardan.</span> Secretary.</p>
+
+    <img src="image/3.jpg" alt="Muh. Juharman" class="w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Muh. Juharman.</span> Treasurer.</p>
+
+
+  <!-- Blog entry -->
+  <div class="w3-padding-16 w3-content" id="blog">
+    <h2 class="w3-text-light-grey">ARTICLE</h2>
+    <hr style="width:150px" class="w3-opacity">
+
+  <div class="w3-container w3-white w3-padding-large">
+    <div class="w3-center">
+      <h3>BOOTSTRAP</h3>
+      <h5>framework, <span class="w3-opacity">Februari 15, 2022</span></h5>
+    </div>
+
+    <div class="w3-justify">
+      <img src="image/bootstrap.png" alt="Bootstrap" style="width:100%" class="w3-padding-16">
+      <p><strong>Bootstrap</strong> adalah kerangka kerja CSS yang sumber terbuka dan bebas untuk merancang situs web dan aplikasi web. 
+      Kerangka kerja ini berisi templat desain berbasis HTML dan CSS untuk tipografi, formulir, tombol, navigasi, dan komponen antarmuka lainnya, serta juga ekstensi opsional JavaScript. 
+      Tidak seperti kebanyakan kerangka kerja web lainnya, kerangka kerja ini hanya fokus pada pengembangan front-end saja.</p>
+      <p>site : <a href="https://getbootstrap.com/">getbootstrap.com</a></p>
+      <p>source : <a href="https://id.wikipedia.org/wiki/Bootstrap_(kerangka_kerja)">wikipedia.com</a></p>
+      <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+      <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo3')"><b>Replies  </b> <span class="w3-tag w3-white">3</span></button></p>
+      <p class="w3-clear"></p>
+      
+      <!-- Example of comment field -->
+      <div id="demo3" style="display:none">
+        <hr>
+        <div class="w3-row w3-margin-bottom">
+          <div class="w3-col l2 m3">
+            <img src="image/richard-account.jpg" style="width:90px;">
+          </div>
+          <div class="w3-col l10 m9">
+            <h4>Richard Jago <span class="w3-opacity w3-medium">February 18, 2022, 9:22 AM</span></h4>
+            <p>Keren tawwa pembahasannya.</p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-bottom">
+          <div class="w3-col l2 m3">
+            <img src="image/achyar-account.jpg" style="width:90px;">
+          </div>
+          <div class="w3-col l10 m9">
+            <h4>Achyar Badboy <span class="w3-opacity w3-medium">February 18, 2022, 9:22 AM</span></h4>
+            <p>Salam dari Soppeng!</p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-bottom">
+          <div class="w3-col l2 m3">
+            <img src="image/syafi-account.jpg" style="width:90px;">
+          </div>
+          <div class="w3-col l10 m9">
+            <h4>Axton <span class="w3-opacity w3-medium">February 18, 2022, 9:22 AM</span></h4>
+            <p>Kuren Bang!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="w3-container w3-white w3-padding-large">
+    <div class="w3-center">
+      <h3>W3SCHOOLS</h3>
+      <h5>Web Developer, <span class="w3-opacity">Februari 18, 2022</span></h5>
+    </div>
+
+    <div class="w3-justify">
+      <img src="image/w3schools.png" alt="W3Schools" style="width:100%" class="w3-padding-16">
+      <p><strong>W3Schools</strong> adalah situs web developer informasi, dengan tutorial dan referensi yang berkaitan dengan topik 
+        pengembangan web seperti HTML, CSS, JavaScript, PHP, SQL, dan JQuery. Situs ini mendapatkan namanya dari singkatan untuk World Wide Web; W3 adalah numeronym dari WWW. 
+        W3Schools tidak berafiliasi dengan W3C. Hal ini dibuat dan dimiliki oleh Refsnes data, pengembangan perangkat lunak milik keluarga Norwegia dan perusahaan konsultan.
+        Situs ini menyediakan panduan referensi yang mencakup banyak aspek pemrograman web, termasuk teknologi seperti HTML, XHTML, CSS, XML, JavaScript, PHP, ASP, SQL dll.</p>
+        <p>site : <a href="https://www.w3schools.com/">w3school.com</a></p>
+        <p>source : <a href="https://id.wikipedia.org/wiki/W3Schools">wikipedia.com</a></p>
+      <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+      <p class="w3-right"><button class="w3-button w3-black"><b>Replies  </b> <span class="w3-tag w3-white">0</span></button></p>
+      <p class="w3-clear"></p>
+  </div>
+  
+<!-- END BLOG ENTRIES -->
+</div>
+  
+    <!-- Section -->
+    <div class="w3-padding-16 w3-content" id="gallery">
+      <h2 class="w3-text-light-grey">OUR PHOTOS</h2>
+      <hr style="width:200px" class="w3-opacity">
+  
+      <!-- Grid for photos -->  
+      <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/a.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/b.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/c.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/d.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/e.jpg" style="width:100%;">
+      </div>
+      <div class="w3-half">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/f.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/g.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/h.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/i.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/j.jpg" style="width:100%;">
+      </div>
+      <div class="w3-half">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/k.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/l.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/m.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/n.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/o.jpg" style="width:100%;">
+      </div>
+      <div class="w3-half">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/p.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/q.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/r.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/s.jpg" style="width:100%;">
+        <img class="w3-hover-opacity" alt="PTIK C 2021 Photos" src="image/t.jpg" style="width:100%;">
+      </div>
+      </div>      
+      </div>
+      <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+        <img class="w3-modal-content" id="img01" style="width:100%">
+      </div>
+      <!-- End photo grid -->
+    
+      <!-- Contact Section -->
+      <div class="w3-padding-32 w3-content w3-text-grey" id="contact">
+        <h2 class="w3-text-light-grey">Contact Us</h2>
+        <hr style="width:200px" class="w3-opacity">
+    
+        <div class="w3-section">
+          <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> South Sulawesi, Indonesia</p>
+          <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +62-1234-567-8910</p>
+          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: ptikc2021@gmail.com</p>
+        </div><br>
+    
+        <p>Let's get in touch. Send us a message:</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-padding-16 w3-round" type="text" placeholder="Name" required name="Name"></p>
+          <p><input class="w3-input w3-padding-16 w3-round" type="number" placeholder="Contact" required name="Telp Number"></p>
+          <p><input class="w3-input w3-padding-16 w3-round" type="text" placeholder="Email" required name="Email"></p>
+          <p><input class="w3-input w3-padding-16 w3-round" type="datetime-local" placeholder="Date and time" required name="Date" value="1111-11-11T11:11"></p>
+          <p><input class="w3-input w3-padding-16 w3-round" type="text" placeholder="Subject" required name="Subject"></p>
+          <p><input class="w3-input w3-padding-16 w3-round " type="text" placeholder="Message" required name="Message"></p>
+          <button class="w3-button w3-light-grey w3-padding-large w3-round w3-hover-deep-orange w3-text-deep-orange" type="submit">
+            <a style="text-decoration: none;" href="mailto:ptikc2021@gmail.com"><i class="fa fa-paper-plane"></i> SEND MESSAGE</a>
+           </button>
+       </form>
+    
+      <!-- End Contact Section -->
+      </div>
+      
+    <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+    <footer class="w3-content w3-text-grey w3-xxlarge">
+      <a href="https://www.instagram.com/ptikc2021"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a href="https://discord.gg/qgsj4wqz"><i class="fab fa-discord w3-hover-opacity"></i></a>
+      <a href="https://github.com/PTIKC2021"><i class="fab fa-github w3-hover-opacity"></i></a>
+      <a href="https://www.youtube.com/channel/UCqf1Nj5c19VovKlzCUcPMWA"><i class="fab fa-youtube w3-hover-opacity"></i></a>
+     <p class="w3-small">This website was made with W3schools Space and developed with Visual Studio Code. Let's Join Us!</p>
+     <a class="w3-button w3-round-xxlarge w3-small w3-light-grey" href="https://www.w3schools.com/spaces" target="_blank">Start now</a> 
+     <div class="w3-padding-32"></div>
+     <!-- End footer -->
+    </footer>
+    <!-- END PAGE CONTENT -->
+    </div>
+</body>
+</html>
